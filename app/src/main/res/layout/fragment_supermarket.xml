@@ -1,56 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.supermarket.SupermarketFragment">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+<layout >
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.zacatales.parcialpdm.ui.supermarket.viewmodel.SupermarketViewModel" />
+    </data>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/Background">
+        tools:context=".ui.supermarket.SupermarketFragment">
 
-        <ImageView
-            android:id="@+id/imageSupermarket"
-            android:layout_width="@dimen/sizeImage"
-            android:layout_height="@dimen/sizeImage"
-            android:layout_marginTop="@dimen/marginTopImage"
-            android:src="@drawable/supermarket"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/Background">
 
-        <TextView
-            android:id="@+id/nameSupermarket"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="76dp"
-            android:layout_marginEnd="50dp"
-            android:gravity="center"
-            android:textSize="25sp"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageSupermarket" />
+            <ImageView
+                android:id="@+id/imageSupermarket"
+                android:layout_width="@dimen/sizeImage"
+                android:layout_height="@dimen/sizeImage"
+                android:layout_marginTop="@dimen/marginTopImage"
+                android:src="@drawable/supermarket"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/ubicationSupermarket"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="183dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="184dp"
-            android:text="@={viewmodel.rating}"
-            android:textSize="15sp"
-            android:textColor="@color/ratingColor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nameSupermarket" />
+            <TextView
+                android:id="@+id/nameSupermarket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="76dp"
+                android:layout_marginEnd="50dp"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:text="@={viewmodel.name}"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageSupermarket" />
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</FrameLayout>
+            <TextView
+                android:id="@+id/ubicationSupermarket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="183dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="184dp"
+                android:text="@={viewmodel.ubication}"
+                android:textSize="15sp"
+                android:textColor="@color/ratingColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameSupermarket" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

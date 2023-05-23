@@ -1,83 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.supermarket.newSupermarket.NewSupermarketFragment">
+<layout >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.zacatales.parcialpdm.ui.supermarket.viewmodel.SupermarketViewModel" />
+    </data>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/Background">
+        tools:context=".ui.supermarket.newSupermarket.NewSupermarketFragment">
 
-    <TextView
-        android:id="@+id/textNewPokemon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/basicGap"
-        android:layout_marginTop="@dimen/maxGap"
-        android:layout_marginEnd="@dimen/basicGap"
-        android:gravity="center"
-        android:text="@string/titleNew"
-        android:textColor="@color/textColor"
-        android:textSize="@dimen/titleSize"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textFieldName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/mediumGap"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="@dimen/mediumGap"
-        android:hint="@string/name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textNewPokemon">
-
-        <com.google.android.material.textfield.TextInputEditText
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="4dp"
-            tools:layout_editor_absoluteY="150dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="match_parent"
+            android:background="@color/Background">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textFieldUbication"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/mediumGap"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="@dimen/mediumGap"
-            android:hint="@string/ubication"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textFieldName">
-
-            <com.google.android.material.textfield.TextInputEditText
+            <TextView
+                android:id="@+id/textNewPokemon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:layout_editor_absoluteX="4dp"
-                tools:layout_editor_absoluteY="150dp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginStart="@dimen/basicGap"
+                android:layout_marginTop="@dimen/maxGap"
+                android:layout_marginEnd="@dimen/basicGap"
+                android:gravity="center"
+                android:text="@string/titleNew"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/titleSize"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="236dp"
-            android:backgroundTint="@color/btnColor"
-            android:onClick="@{() -> viewmodel.createPokemon()}"
-            android:text="@string/actionBtn"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-        />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFieldName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mediumGap"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="@dimen/mediumGap"
+                android:hint="@string/name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textNewPokemon">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:text="@={viewmodel.name}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:layout_editor_absoluteX="4dp"
+                    tools:layout_editor_absoluteY="150dp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-</FrameLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFieldUbication"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mediumGap"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="@dimen/mediumGap"
+                android:hint="@string/ubication"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textFieldName">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:text="@={viewmodel.ubication}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:layout_editor_absoluteX="4dp"
+                    tools:layout_editor_absoluteY="150dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="236dp"
+                android:backgroundTint="@color/btnColor"
+                android:onClick="@{() -> viewmodel.createPokemon()}"
+                android:text="@string/actionBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+            />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>
