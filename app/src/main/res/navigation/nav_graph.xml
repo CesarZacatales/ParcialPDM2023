@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.example.zacatales.parcialpdm.ListFragment"
+        android:name="com.example.zacatales.parcialpdm.ui.supermarket.list.ListFragment"
         android:label="fragment_list"
         tools:layout="@layout/fragment_list" >
         <action
@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/newSupermarketFragment"
-        android:name="com.example.zacatales.parcialpdm.NewSupermarketFragment"
+        android:name="com.example.zacatales.parcialpdm.ui.supermarket.newSupermarket.NewSupermarketFragment"
         android:label="fragment_new_supermarket"
         tools:layout="@layout/fragment_new_supermarket" />
     <fragment
         android:id="@+id/supermarketFragment"
-        android:name="com.example.zacatales.parcialpdm.SupermarketFragment"
+        android:name="com.example.zacatales.parcialpdm.ui.supermarket.SupermarketFragment"
         android:label="fragment_supermarket"
         tools:layout="@layout/fragment_supermarket" />
 </navigation>
