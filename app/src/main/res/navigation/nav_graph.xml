@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.zacatales.parcialpdm.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_supermarketFragment"
+            app:destination="@id/supermarketFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_newSupermarketFragment"
+            app:destination="@id/newSupermarketFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newSupermarketFragment"
+        android:name="com.example.zacatales.parcialpdm.NewSupermarketFragment"
+        android:label="fragment_new_supermarket"
+        tools:layout="@layout/fragment_new_supermarket" />
+    <fragment
+        android:id="@+id/supermarketFragment"
+        android:name="com.example.zacatales.parcialpdm.SupermarketFragment"
+        android:label="fragment_supermarket"
+        tools:layout="@layout/fragment_supermarket" />
+</navigation>
